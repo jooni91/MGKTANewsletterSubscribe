@@ -52,7 +52,7 @@ namespace SendGridNewsletterSubscribe
             return new List<string>() {
                 lang switch
                 {
-                    "fi" => configuration.GetValue<string>("ContactListId"),
+                    "fi" => configuration.GetValue<string>("ContactListIdFi"),
                     _ => throw new ArgumentOutOfRangeException($"{lang} is not a supported language.")
                 }
             };
