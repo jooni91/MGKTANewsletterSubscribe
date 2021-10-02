@@ -27,7 +27,8 @@ namespace SendGridNewsletterSubscribe
             string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
             var data = JsonConvert.DeserializeObject<RequestParameters>(requestBody);
 
-            (data ?? throw new ApplicationException("Deserialization of the request body was not successfull.")).ValidateModel();
+            (data ?? throw new ApplicationException($"Deserialization of the request body was not successfull. Data that we recieved: {requestBody}"))
+                .ValidateModel();
 
             var config = GetConfig(context);
             var service = new SendGridApiService(config.GetValue<string>("SendGridApiKey"));
