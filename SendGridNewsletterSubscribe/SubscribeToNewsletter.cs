@@ -17,7 +17,7 @@ namespace SendGridNewsletterSubscribe
 {
     public static class SubscribeToNewsletter
     {
-        [FunctionName("Subscribe To Newsletter")]
+        [FunctionName("SubscribeToNewsletter")]
         public static async Task<IActionResult> Run(
             [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = "subscribe-newsletter")] HttpRequest req, ILogger log, 
             ExecutionContext context, System.Threading.CancellationToken cancellationToken)
